@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://importScreen.caption"
+        messagesPack="com.company.erasmusaga.web.screens">
+    <layout>
+        <vbox align="MIDDLE_CENTER">
+            <label id="info_label" value="Please enter the local path of excel file" stylename="import-label-style"/>
+            <vbox>
+                <hbox>
+                    <label id="pathWay_lbl" value="File Pathway :" stylename="import-label-style"/>
+                    <textField id="input_txt" stylename="inputTf-style"/>
+                </hbox>
+                <button id="importBtn" caption="Import this file" stylename="importBtn-style" align="MIDDLE_CENTER"/>
+            </vbox>
+        </vbox>
+    </layout>
+</window>

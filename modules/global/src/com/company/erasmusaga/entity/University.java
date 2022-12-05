@@ -53,4 +53,11 @@ public class University extends StandardEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+    @PrePersist
+    public void prePersist() {
+        if(name == null){
+            throw new RuntimeException("name boş olamaz");
+        }
+    }
 }

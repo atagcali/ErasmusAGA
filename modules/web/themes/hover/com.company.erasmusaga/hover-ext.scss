@@ -1,0 +1,38 @@
+/* Define your theme modifications inside next mixin */
+@mixin com_company_erasmusaga-hover-ext {
+
+}
+.c-sidemenu-layout.v-csslayout .c-sidemenu-panel > .c-sidemenu {
+  @include linear-gradient(182.22deg, #292C6D 24.62%, #EC255A 121.09%);
+}
+.c-app-workarea.v-layout.v-widget.v-has-height.c-workarea.c-app-workarea-c-workarea.c-app-workarea-tabbed.c-app-workarea-c-app-workarea-tabbed.c-app-workarea-initial.c-app-workarea-c-app-workarea-initial {
+  @include linear-gradient(109.14deg, #FFEFF3 11.09%, #EADBFC 104.94%);
+}
+.v-verticallayout.v-layout.v-vertical.v-widget.c-window-layout.v-verticallayout-c-window-layout.v-has-width.v-has-height {
+  @include linear-gradient(109.14deg, #FFEFF3 11.09%, #EADBFC 104.94%);
+}
+.c-app-window-wrap.v-layout.v-widget.c-app-tabbed-window.c-app-window-wrap-c-app-tabbed-window.v-has-width.v-has-height {
+  @include linear-gradient(109.14deg, #FFEFF3 11.09%, #EADBFC 104.94%);
+}
+.v-tabsheet.c-main-tabsheet.framed.padded-tabbar>.v-tabsheet-tabcontainer{
+  @include linear-gradient(109.14deg, #FFEFF3 11.09%, #EADBFC 104.94%);
+}
+.v-tabsheet.c-main-tabsheet.framed.padded-tabbar>.v-tabsheet-tabcontainer .v-tabsheet-tabitem-selected .v-caption{
+  background: #D1EDF9 !important;
+}
+.importBtn-style{
+  margin-left: 550px !important;
+  background: darkslateblue !important;
+  color: #FFEFF3 !important;
+}
+.inputTf-style{
+  margin-left: 50px !important;
+  width: 750px !important;
+  border-radius: 6px!important;
+  background: #D1EDF9 !important;
+}
+.import-label-style{
+  font-size: medium;
+  margin-left: 200px;
+  margin-bottom: 25px;
+}
