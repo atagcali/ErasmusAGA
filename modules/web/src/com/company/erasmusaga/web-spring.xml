@@ -8,4 +8,11 @@
     
     <gui:screens base-packages="com.company.erasmusaga.web"/>
 
+    <bean id="erasmusaga_exceptionHandlersConf" class="com.haulmont.cuba.web.exception.ExceptionHandlersConfiguration">
+        <property name="handlerClasses">
+            <list>
+                <value>com.company.erasmusaga.web.Exception.AGAExceptionHandler</value>
+            </list>
+        </property>
+    </bean>
 </beans>
