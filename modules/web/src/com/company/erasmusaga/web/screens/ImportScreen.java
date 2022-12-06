@@ -1,5 +1,6 @@
 package com.company.erasmusaga.web.screens;
 
+import com.company.erasmusaga.exception.AGARuntimeException;
 import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.components.TextField;
@@ -26,8 +27,8 @@ public class ImportScreen extends Screen {
 
     @Subscribe("importBtn")
     public void onImportBtnClick(Button.ClickEvent event) {
-        if(input_txt==null || input_txt.getValue().equals("")){
-            notifications.create().withCaption("Please enter the localPath").show();
+        if(input_txt.getValue()==null || input_txt.getValue().equals("")){
+            throw new AGARuntimeException("Please enter the Local Path of the excel file.","Can't find Local Path");
         }
         else {
             String localPath = input_txt.getValue();

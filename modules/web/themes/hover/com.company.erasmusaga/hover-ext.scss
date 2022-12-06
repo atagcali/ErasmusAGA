@@ -36,3 +36,14 @@
   margin-left: 200px;
   margin-bottom: 25px;
 }
+.v-window-contents{
+  @include linear-gradient(109.14deg, #FFEFF3 11.09%, #EADBFC 104.94%);
+}
+.v-window-header{
+  background: #6064B0 !important;
+  color: #F5F5F5 !important;
+}
+.v-window-outerheader{
+  background: #6064B0 !important;
+  color: #F5F5F5 !important;
+}
