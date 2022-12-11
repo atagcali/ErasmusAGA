@@ -8,6 +8,7 @@ import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name = "ERASMUSAGA_UNIVERSITY")
 @Entity(name = "erasmusaga_University")
@@ -17,6 +18,12 @@ public class University extends StandardEntity {
 
     @Column(name = "NAME")
     private String name;
+
+    @JoinTable(name = "ERASMUSAGA_UNIVERSITY_COURSE_LINK",
+            joinColumns = @JoinColumn(name = "UNIVERSITY_ID"),
+            inverseJoinColumns = @JoinColumn(name = "COURSE_ID"))
+    @ManyToMany
+    private List<Course> courses;
 
     @OnDeleteInverse(DeletePolicy.DENY)
     @OnDelete(DeletePolicy.CASCADE)
@@ -29,6 +36,14 @@ public class University extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "REQUIREMENTS_ID")
     private FileDescriptor requirements;
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     public FileDescriptor getRequirements() {
         return requirements;

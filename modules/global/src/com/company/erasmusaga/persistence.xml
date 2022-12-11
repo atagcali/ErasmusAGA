@@ -3,5 +3,16 @@
     <persistence-unit name="erasmusaga" transaction-type="RESOURCE_LOCAL">
 
         <class>com.company.erasmusaga.entity.University</class>
+        <class>com.company.erasmusaga.entity.Comment</class>
+        <class>com.company.erasmusaga.entity.CommentType</class>
+        <class>com.company.erasmusaga.entity.Duration</class>
+        <class>com.company.erasmusaga.entity.Status</class>
+        <class>com.company.erasmusaga.entity.StatusType</class>
+        <class>com.company.erasmusaga.entity.Course</class>
+        <class>com.company.erasmusaga.entity.Department</class>
+        <class>com.company.erasmusaga.entity.Application</class>
+        <class>com.company.erasmusaga.entity.AppAdmin</class>
+        <class>com.company.erasmusaga.entity.CourseCoordinator</class>
+        <class>com.company.erasmusaga.entity.Student</class>
     </persistence-unit>
 </persistence>
