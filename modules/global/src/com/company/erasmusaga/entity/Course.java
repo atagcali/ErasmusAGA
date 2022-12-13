@@ -5,7 +5,6 @@ import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Table(name = "ERASMUSAGA_COURSE")
 @Entity(name = "erasmusaga_Course")
@@ -16,8 +15,20 @@ public class Course extends StandardEntity {
     @Column(name = "NAME")
     private String name;
 
+    @Column(name = "EXEMPTED_BILKENT_COURSE_CODE")
+    private String exemptedBilkentCourseCode;
+
+    @Column(name = "EXEMPTED_BILKENT_COURSE_NAME")
+    private String exemptedBilkentCourseName;
+
+    @Column(name = "EXEMPTED_BILKENT_COURSE_CREDIT")
+    private Double exemptedBilkentCourseCredit;
+
+    @Column(name = "CREDIT")
+    private Double credit;
+
     @Column(name = "CODE")
-    private Integer code;
+    private String code;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SYLLABUS_ID")
@@ -27,18 +38,56 @@ public class Course extends StandardEntity {
     @JoinColumn(name = "DEPARTMENT_ID")
     private Department department;
 
-    @JoinTable(name = "ERASMUSAGA_UNIVERSITY_COURSE_LINK",
-            joinColumns = @JoinColumn(name = "COURSE_ID"),
-            inverseJoinColumns = @JoinColumn(name = "UNIVERSITY_ID"))
-    @ManyToMany
-    private List<University> universities;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "UNIVERSITY_ID")
+    private University university;
 
-    public List<University> getUniversities() {
-        return universities;
+    public void setExemptedBilkentCourseCredit(Double exemptedBilkentCourseCredit) {
+        this.exemptedBilkentCourseCredit = exemptedBilkentCourseCredit;
     }
 
-    public void setUniversities(List<University> universities) {
-        this.universities = universities;
+    public Double getExemptedBilkentCourseCredit() {
+        return exemptedBilkentCourseCredit;
+    }
+
+    public void setCredit(Double credit) {
+        this.credit = credit;
+    }
+
+    public Double getCredit() {
+        return credit;
+    }
+
+    public String getExemptedBilkentCourseName() {
+        return exemptedBilkentCourseName;
+    }
+
+    public void setExemptedBilkentCourseName(String exemptedBilkentCourseName) {
+        this.exemptedBilkentCourseName = exemptedBilkentCourseName;
+    }
+
+    public String getExemptedBilkentCourseCode() {
+        return exemptedBilkentCourseCode;
+    }
+
+    public void setExemptedBilkentCourseCode(String exemptedBilkentCourseCode) {
+        this.exemptedBilkentCourseCode = exemptedBilkentCourseCode;
+    }
+
+    public University getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(University university) {
+        this.university = university;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
     }
 
     public Department getDepartment() {
@@ -55,14 +104,6 @@ public class Course extends StandardEntity {
 
     public void setSyllabus(FileDescriptor syllabus) {
         this.syllabus = syllabus;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
     }
 
     public String getName() {
