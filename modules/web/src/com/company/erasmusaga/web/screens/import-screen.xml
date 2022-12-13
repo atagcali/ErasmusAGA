@@ -9,8 +9,12 @@
                 <hbox>
                     <label id="pathWay_lbl" value="File Pathway :" stylename="import-label-style"/>
                     <textField id="input_txt" stylename="inputTf-style"/>
+                    <label id="sheet_lbl" value="Sheet Name :" stylename="import-label-style"/>
+                    <textField id="inputSheet_txt" stylename="inputTf-style"/>
                 </hbox>
                 <button id="importBtn" caption="Import this file" stylename="importBtn-style" align="MIDDLE_CENTER"/>
+                <button id="importUniBtn" caption="import unis"/>
+                <button id="importCourseBtn" caption="import courses" visible="false"/>
             </vbox>
         </vbox>
     </layout>

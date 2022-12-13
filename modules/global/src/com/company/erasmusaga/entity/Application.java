@@ -32,6 +32,7 @@ public class Application extends StandardEntity {
 
     @OneToMany(mappedBy = "application")
     private List<Status> statuses;
+
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "application")
     private Student student;
 
@@ -82,4 +83,6 @@ public class Application extends StandardEntity {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
+    public void addUniversity(University university) { this.universities.add(university); }
 }

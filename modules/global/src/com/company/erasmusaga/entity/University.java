@@ -19,10 +19,25 @@ public class University extends StandardEntity {
     @Column(name = "NAME")
     private String name;
 
-    @JoinTable(name = "ERASMUSAGA_UNIVERSITY_COURSE_LINK",
-            joinColumns = @JoinColumn(name = "UNIVERSITY_ID"),
-            inverseJoinColumns = @JoinColumn(name = "COURSE_ID"))
-    @ManyToMany
+    @Column(name = "AGREEMENT_TYPE")
+    private String agreementType;
+
+    @Column(name = "COUNTRY")
+    private String country;
+
+    @Column(name = "LOWEST_GRADE")
+    private String lowestGrade;
+
+    @Column(name = "HIGHEST_GRADE")
+    private String highestGrade;
+
+    @Column(name = "PASSING_GRADE")
+    private String passingGrade;
+
+    @Column(name = "DEPARTMENT")
+    private String department;
+
+    @OneToMany(mappedBy = "university")
     private List<Course> courses;
 
     @OnDeleteInverse(DeletePolicy.DENY)
@@ -37,12 +52,60 @@ public class University extends StandardEntity {
     @JoinColumn(name = "REQUIREMENTS_ID")
     private FileDescriptor requirements;
 
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
     public List<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public String getAgreementType() {
+        return agreementType;
+    }
+
+    public void setAgreementType(String agreementType) {
+        this.agreementType = agreementType;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getPassingGrade() {
+        return passingGrade;
+    }
+
+    public void setPassingGrade(String passingGrade) {
+        this.passingGrade = passingGrade;
+    }
+
+    public String getHighestGrade() {
+        return highestGrade;
+    }
+
+    public void setHighestGrade(String highestGrade) {
+        this.highestGrade = highestGrade;
+    }
+
+    public String getLowestGrade() {
+        return lowestGrade;
+    }
+
+    public void setLowestGrade(String lowestGrade) {
+        this.lowestGrade = lowestGrade;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public FileDescriptor getRequirements() {

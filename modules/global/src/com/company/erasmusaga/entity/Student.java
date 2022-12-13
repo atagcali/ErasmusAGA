@@ -12,7 +12,11 @@ public class Student extends User {
     private static final long serialVersionUID = -527565257349891853L;
 
     @Column(name = "BILKENT_ID")
-    private Long bilkentID;
+    private Integer bilkentID;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DEPARTMENT_ID")
+    private Department department;
 
     @Column(name = "TOTAL_GRADE")
     private Double totalGrade;
@@ -24,6 +28,22 @@ public class Student extends User {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "APPLICATION_ID")
     private Application application;
+
+    public void setBilkentID(Integer bilkentID) {
+        this.bilkentID = bilkentID;
+    }
+
+    public Integer getBilkentID() {
+        return bilkentID;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     public Application getApplication() {
         return application;
@@ -49,11 +69,4 @@ public class Student extends User {
         this.totalGrade = totalGrade;
     }
 
-    public Long getBilkentID() {
-        return bilkentID;
-    }
-
-    public void setBilkentID(Long bilkentID) {
-        this.bilkentID = bilkentID;
-    }
 }
