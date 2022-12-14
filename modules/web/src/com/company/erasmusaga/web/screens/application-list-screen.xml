@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://applicationListScreen.caption"
+        messagesPack="com.company.erasmusaga.web.screens">
+    <data>
+        <collection id="applicationDc" class="com.company.erasmusaga.entity.Application" view="application-view">
+            <loader id="applicationDl">
+                <query>
+                    <![CDATA[select e from erasmusaga_Application e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <dataGrid id="applicationDG" dataContainer="applicationDc">
+            <columns>
+                <column caption="Name" property="student.name"/>
+                <column caption="ID" property="student.bilkentID"/>
+                <column caption="Last Status" property="lastStatus.type"/>
+            </columns>
+            <rowsCount/>
+        </dataGrid>
+    </layout>
+</window>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editApplicationScreen.caption"
+        messagesPack="com.company.erasmusaga.web.screens">
+    <data>
+        <instance id="applicationDc" class="com.company.erasmusaga.entity.Application" view="application-view"/>
+    </data>
+    <layout>
+    </layout>
+</window>
