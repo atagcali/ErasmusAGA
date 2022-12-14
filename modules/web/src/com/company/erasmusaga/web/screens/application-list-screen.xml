@@ -12,11 +12,13 @@
         </collection>
     </data>
     <layout>
-        <dataGrid id="applicationDG" dataContainer="applicationDc">
+        <dataGrid id="applicationDG" dataContainer="applicationDc" css="margin-left:200px">
             <columns>
                 <column caption="Name" property="student.name"/>
                 <column caption="ID" property="student.bilkentID"/>
-                <column caption="Last Status" property="lastStatus.type"/>
+                <column caption="Grade" property="student.totalGrade"/>
+                <column caption="Last Status" property="lastStatus.type.name"/>
+                <column caption="Dönem" property="duration"/>
             </columns>
             <rowsCount/>
         </dataGrid>

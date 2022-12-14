@@ -6,7 +6,6 @@ import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.DataGrid;
 import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.screen.*;
-import com.haulmont.cuba.web.App;
 
 import javax.inject.Inject;
 
@@ -17,7 +16,8 @@ public class ApplicationListScreen extends Screen {
     private CollectionLoader<Application> applicationDl;
     @Inject
     private ScreenBuilders screenBuilders;
-
+    @Inject
+    private DataGrid<Application> applicationDG;
 
     @Subscribe
     public void onInit(InitEvent event) {

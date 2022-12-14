@@ -1,9 +1,11 @@
 package com.company.erasmusaga.config;
 
 import com.haulmont.cuba.core.config.Property;
+import com.haulmont.cuba.core.config.Source;
+import com.haulmont.cuba.core.config.SourceType;
 import com.haulmont.cuba.core.config.defaults.DefaultString;
 import jdk.nashorn.internal.runtime.regexp.joni.Config;
-
+@Source(type = SourceType.DATABASE)
 public interface AgaConfig extends Config {
     @Property("erasmusaga.StatusType.Evaluation")
     @DefaultString("2198dd21-bcf5-fbae-15d9-26bf66a4f752")
