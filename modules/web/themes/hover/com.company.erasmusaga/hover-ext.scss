@@ -47,3 +47,42 @@
   background: #6064B0 !important;
   color: #F5F5F5 !important;
 }
+.v-grid-cell > div {
+  background: #25316D;
+  color: #F5F5F5;
+}
+.v-grid-cell.sort-asc.c-sort-last:after, .v-grid-cell.sort-desc.c-sort-last:after {
+  color: #F5F5F5;
+}
+.v-grid-sidebar.closed.v-contextmenu {
+  visibility: hidden;
+}
+.v-grid-cell.sortable.sort-desc.c-sort-last {
+  background: #25316D;
+}
+.v-grid-cell.sortable {
+  background: #25316D;
+}
+.v-grid-header .v-grid-cell{
+  background-image: none;
+  background-color: #25316D !important;
+}
+.v-grid-column-resize-handle {
+  width: 1px;
+  color: #F5F5F5;
+}
+.v-grid-row.v-grid-row-strip.v-grid-row-has-data.v-grid-row-focused.v-grid-row-selected > .v-grid-cell {
+  background: #5F6F94;
+}
+.v-grid-row.v-grid-row-focused.v-grid-row-has-data.v-grid-row-selected > .v-grid-cell{
+  background: #5F6F94;
+}
+.v-grid-row.v-grid-row-stripe.v-grid-row-has-data > .v-grid-cell{
+  background: #97D2EC;
+}
+.v-grid-row.v-grid-row-has-data > .v-grid-cell{
+  background: #D1EDF9;
+}
+.v-grid-header th:first-child{
+  background: #25316D !important;
+}

@@ -3,13 +3,12 @@
 
     <view name="application-view" class="com.company.erasmusaga.entity.Application" extends="_local">
         <property name="comments"/>
-        <property name="student" view="student-view"/>
-        <property name="lastStatus" view="_local"/>
+        <property name="student" view="_local"/>
+        <property name="lastStatus" view="status-view"/>
         <property name="duration" view="_local"/>
         <property name="universities" view="_local"/>
     </view>
-    <view name="student-view" class="com.company.erasmusaga.entity.Student" extends="_local">
-        <property name="bilkentID"/>
-        <property name="name"/>
+    <view name="status-view" class="com.company.erasmusaga.entity.Status" extends="_local">
+        <property name="type" view="_local"/>
     </view>
 </views>
