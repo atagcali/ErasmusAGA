@@ -2,7 +2,7 @@
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
     <view name="application-view" class="com.company.erasmusaga.entity.Application" extends="_local">
-        <property name="comments"/>
+        <property name="comments" view="comment-view"/>
         <property name="student" view="_local"/>
         <property name="lastStatus" view="status-view"/>
         <property name="duration" view="_local"/>
@@ -10,5 +10,9 @@
     </view>
     <view name="status-view" class="com.company.erasmusaga.entity.Status" extends="_local">
         <property name="type" view="_local"/>
+    </view>
+    <view name="comment-view" class="com.company.erasmusaga.entity.Comment" extends="_local">
+        <property name="documents" view="_local"/>
+        <property name="type"/>
     </view>
 </views>
