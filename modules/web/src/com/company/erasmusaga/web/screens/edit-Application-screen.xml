@@ -4,7 +4,42 @@
         messagesPack="com.company.erasmusaga.web.screens">
     <data>
         <instance id="applicationDc" class="com.company.erasmusaga.entity.Application" view="application-view"/>
+        <collection id="commentDc" class="com.company.erasmusaga.entity.Comment" view="comment-view">
+            <loader id="commentDl">
+                <query>
+                    <![CDATA[select e from erasmusaga_Comment e]]>
+                    <condition>
+                        <and>
+                            <jpql>
+                                <where>
+                                    e.application=:application
+                                </where>
+                            </jpql>
+                        </and>
+                    </condition>
+                </query>
+            </loader>
+        </collection>
     </data>
     <layout>
+        <vbox id="mainVBox">
+            <hbox id="mainHbox">
+                <vbox id="leftSide">
+                    <vbox id="commentsVbox">
+
+                    </vbox>
+                    <vbox id="addCommentVbox">
+                        <textArea id="commentTxt" caption="Please enter Your Comment"/>
+                        <hbox id="addCommentButtons">
+                            <button id="saveCommentBtn" caption="Kaydet"/>
+                            <button id="addFileBtn" caption="Dosya Yükle"/>
+                        </hbox>
+                    </vbox>
+                </vbox>
+                <vbox id="rightSide">
+
+                </vbox>
+            </hbox>
+        </vbox>
     </layout>
 </window>

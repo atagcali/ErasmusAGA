@@ -5,6 +5,7 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
+import com.haulmont.cuba.security.entity.User;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,6 +19,10 @@ public class Comment extends StandardEntity {
     @Column(name = "CONTENT")
     private String content;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    private User user;
+
     @JoinTable(name = "ERASMUSAGA_COMMENT_FILE_DESCRIPTOR_LINK",
             joinColumns = @JoinColumn(name = "COMMENT_ID"),
             inverseJoinColumns = @JoinColumn(name = "FILE_DESCRIPTOR_ID"))
@@ -29,19 +34,17 @@ public class Comment extends StandardEntity {
     @OnDelete(DeletePolicy.CASCADE)
     @OneToMany(mappedBy = "comment")
     private List<CommentType> type;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "APPLICATION_ID")
     private Application application;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "STUDENT_ID")
-    private Student student;
 
-    public Student getStudent() {
-        return student;
+    public User getUser() {
+        return user;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Application getApplication() {

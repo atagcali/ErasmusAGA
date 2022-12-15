@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://fileUpload.caption"
+        messagesPack="com.company.erasmusaga.web.dialog">
+    <data>
+        <collection id="filesDc" class="com.haulmont.cuba.core.entity.FileDescriptor"/>
+    </data>
+    <dialogMode height="370" width="670" closeOnClickOutside="true" resizable="true"/>
+    <layout>
+        <vbox id="dropZone" css="border:1px solid gray" height="300px">
+            <hbox stylename="customHBox" id="customHBox"/>
+            <vbox id="fileUploadVbox" align="MIDDLE_CENTER">
+                <multiUpload id="fileUpload" caption="Selec File" align="BOTTOM_CENTER" visible="true" dropZone="dropZone"/>
+            </vbox>
+        </vbox>
+    </layout>
+</window>

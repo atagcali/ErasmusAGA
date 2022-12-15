@@ -1,11 +1,8 @@
 package com.company.erasmusaga.entity;
 
-import com.haulmont.cuba.core.entity.annotation.OnDelete;
-import com.haulmont.cuba.core.global.DeletePolicy;
 import com.haulmont.cuba.security.entity.User;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity(name = "erasmusaga_Student")
 public class Student extends User {
@@ -20,10 +17,6 @@ public class Student extends User {
 
     @Column(name = "TOTAL_GRADE")
     private Double totalGrade;
-
-    @OnDelete(DeletePolicy.CASCADE)
-    @OneToMany(mappedBy = "student")
-    private List<Comment> comments;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "APPLICATION_ID")
@@ -51,14 +44,6 @@ public class Student extends User {
 
     public void setApplication(Application application) {
         this.application = application;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
     }
 
     public Double getTotalGrade() {

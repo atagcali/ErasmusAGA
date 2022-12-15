@@ -6,5 +6,6 @@
     <menu id="application-erasmusaga" caption="mainMsg://menu_config.application-erasmusaga">
         <item screen="erasmusaga_EditApplicationScreen"
               caption="mainMsg://menu_config.erasmusaga_EditApplicationScreen"/>
+        <item screen="erasmusaga_FileUpload" caption="mainMsg://menu_config.erasmusaga_FileUpload"/>
     </menu>
 </menu-config>
