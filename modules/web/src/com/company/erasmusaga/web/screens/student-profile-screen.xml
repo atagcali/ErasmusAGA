@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://studentProfileScreen.caption"
+        messagesPack="com.company.erasmusaga.web.screens">
+    <data>
+        <instance id="studentDc" class="com.company.erasmusaga.entity.Student" view="student-view"/>
+        <collection id="studentsDc" class="com.company.erasmusaga.entity.Student" view="student-view">
+            <loader id="studentsDl">
+                <query>
+                    <![CDATA[select e from erasmusaga_Student e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <vbox align="MIDDLE_CENTER">
+            <hbox>
+                <label value="Öğrenci adı: " stylename="import-label-style"/>
+                <textField id="studentNameTf" dataContainer="studentDc" property="name" stylename="inputTf-style"/>
+            </hbox>
+        </vbox>
+    </layout>
+</window>
