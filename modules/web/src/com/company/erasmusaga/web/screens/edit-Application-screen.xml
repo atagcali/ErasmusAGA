@@ -27,8 +27,8 @@
                 <vbox id="leftSide">
                     <vbox id="commentsVbox">
                     </vbox>
-                    <vbox id="addCommentVbox">
-                        <textArea id="commentTxt" caption="Please enter Your Comment"/>
+                    <vbox id="addCommentVbox" stylename="text-area-style">
+                        <textArea id="commentTxt" caption="Please enter Your Comment" stylename="text-area-style"/>
                         <hbox id="addCommentButtons">
                             <button id="saveCommentBtn" caption="Kaydet"/>
                             <button id="addFileBtn" caption="Dosya Yükle"/>
@@ -36,8 +36,8 @@
                     </vbox>
                 </vbox>
                 <vbox id="rightSide">
-                    <checkBox id="seenByCC" dataContainer="applicationDc" property="seenByCC" caption="Seen1"/>
-                    <checkBox id="seenByAdmin" dataContainer="applicationDc" property="seenByAdmin" caption="seen2"/>
+                    <checkBox id="seenByCC" dataContainer="applicationDc" property="seenByCC" caption="Seen1" align="TOP_RIGHT"/>
+                    <checkBox id="seenByAdmin" dataContainer="applicationDc" property="seenByAdmin" caption="seen2" align="TOP_RIGHT"/>
                     <hbox>
                         <label id="student_name" value = "Name" stylename="import-label-style" css="margin-right:70px" />
                         <textField  id="input_id" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.name" />
