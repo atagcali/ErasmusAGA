@@ -67,6 +67,8 @@ public class EditApplicationScreen extends Screen {
             for (FileDescriptor file : files) {
                 ccc.addInstanceToCommit(file);
             }
+            applicationDc.getItem().setSeenByCC(false);
+            applicationDc.getItem().setSeenByAdmin(false);
             comment.setDocuments(files);
             ccc.addInstanceToCommit(comment);
             dataManager.commit(ccc);
@@ -93,5 +95,9 @@ public class EditApplicationScreen extends Screen {
             commentFragment.setComment(mutableItem);
             commentsVbox.add(commentFragment.getFragment());
         }
+    }
+    @Subscribe
+    public void onBeforeClose(BeforeCloseEvent event) {
+        dataManager.commit(applicationDc.getItem());
     }
 }
