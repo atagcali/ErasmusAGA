@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://toDoListScreeenCc.caption"
+        extends="com/company/erasmusaga/web/screens/application-list-screen.xml"
+        messagesPack="com.company.erasmusaga.web.screens">
+    <layout>
+    </layout>
+</window>

@@ -7,6 +7,20 @@
             <loader id="applicationDl">
                 <query>
                     <![CDATA[select e from erasmusaga_Application e]]>
+                    <condition>
+                        <and>
+                            <jpql>
+                                <where>
+                                    e.seenByAdmin=:seenByAdmin
+                                </where>
+                            </jpql>
+                            <jpql>
+                                <where>
+                                    e.seenByCC=:seenByCC
+                                </where>
+                            </jpql>
+                        </and>
+                    </condition>
                 </query>
             </loader>
         </collection>

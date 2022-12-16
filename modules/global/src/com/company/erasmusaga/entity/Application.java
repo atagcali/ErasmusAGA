@@ -15,6 +15,12 @@ public class Application extends StandardEntity {
     @OneToMany(mappedBy = "application")
     private List<Comment> comments;
 
+    @Column(name = "SEEN_BY_CC")
+    private Boolean seenByCC;
+
+    @Column(name = "SEEN_BY_ADMIN")
+    private Boolean seenByAdmin;
+
     @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DURATION_ID")
@@ -35,6 +41,22 @@ public class Application extends StandardEntity {
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "application")
     private Student student;
+
+    public void setSeenByAdmin(Boolean seenByAdmin) {
+        this.seenByAdmin = seenByAdmin;
+    }
+
+    public Boolean getSeenByAdmin() {
+        return seenByAdmin;
+    }
+
+    public Boolean getSeenByCC() {
+        return seenByCC;
+    }
+
+    public void setSeenByCC(Boolean seenByCC) {
+        this.seenByCC = seenByCC;
+    }
 
     public Student getStudent() {
         return student;

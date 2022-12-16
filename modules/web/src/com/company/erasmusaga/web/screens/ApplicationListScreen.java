@@ -2,6 +2,7 @@ package com.company.erasmusaga.web.screens;
 
 import com.company.erasmusaga.entity.Application;
 import com.google.common.collect.ImmutableMap;
+import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.DataGrid;
 import com.haulmont.cuba.gui.model.CollectionLoader;
@@ -13,11 +14,13 @@ import javax.inject.Inject;
 @UiDescriptor("application-list-screen.xml")
 public class ApplicationListScreen extends Screen {
     @Inject
-    private CollectionLoader<Application> applicationDl;
+    protected CollectionLoader<Application> applicationDl;
     @Inject
     private ScreenBuilders screenBuilders;
     @Inject
     private DataGrid<Application> applicationDG;
+    @Inject
+    private DataManager dataManager;
 
     @Subscribe
     public void onInit(InitEvent event) {

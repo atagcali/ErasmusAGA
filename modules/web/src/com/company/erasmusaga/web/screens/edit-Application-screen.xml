@@ -60,7 +60,8 @@
                     </vbox>
                 </vbox>
                 <vbox id="rightSide">
-
+                    <checkBox id="seenByCC" dataContainer="applicationDc" property="seenByCC" caption="Seen1"/>
+                    <checkBox id="seenByAdmin" dataContainer="applicationDc" property="seenByAdmin" caption="seen2"/>
                 </vbox>
             </hbox>
         </vbox>
