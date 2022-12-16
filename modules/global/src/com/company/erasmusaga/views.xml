@@ -14,6 +14,8 @@
     <view name="comment-view" class="com.company.erasmusaga.entity.Comment" extends="_local">
         <property name="documents" view="_local"/>
         <property name="type"/>
+        <property name="user"/>
+        <property name="createTs"/>
     </view>
     <view name="student-view" class="com.company.erasmusaga.entity.Student" extends="_local">
         <property name="firstName"  />

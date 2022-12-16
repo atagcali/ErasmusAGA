@@ -3,6 +3,7 @@
     <layout>
         <hbox id="filesHbox">
             <button id="fileName"/>
+            <button id="deleteBtn" icon="icons/minus.png"/>
         </hbox>
     </layout>
 </fragment>

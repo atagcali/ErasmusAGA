@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <fragment xmlns="http://schemas.haulmont.com/cuba/screen/fragment.xsd">
     <layout>
-        <vbox id="Vbox">
-            <textArea id="commentTxt"/>
+        <vbox id="Vbox" css="margin-bottom:25px" stylename="text-area-style">
+            <label id="userLbl"/>
+            <textArea id="commentTxt" stylename="text-area-style"/>
         </vbox>
     </layout>
 </fragment>

@@ -73,6 +73,8 @@ public class EditApplicationScreen extends Screen {
             ccc.addInstanceToCommit(comment);
             dataManager.commit(ccc);
             loadComments();
+            commentTxt.setValue(null);
+            files.clear();
         }
     }
 

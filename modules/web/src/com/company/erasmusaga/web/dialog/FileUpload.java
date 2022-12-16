@@ -70,8 +70,14 @@ public class FileUpload extends Screen {
         for (FileDescriptor file : files) {
             FileFragment fileFragment = fragments.create(this,FileFragment.class);
             fileFragment.setFileDescriptor(file);
+            fileFragment.setAdd(true);
+            fileFragment.setParentScreen(this);
             customHBox.add(fileFragment.getFragment());
         }
     }
-
+    public void removeFromFiles(FileDescriptor fileDescriptor){
+        if(files.contains(fileDescriptor)){
+            files.remove(fileDescriptor);
+        }
+    }
 }
