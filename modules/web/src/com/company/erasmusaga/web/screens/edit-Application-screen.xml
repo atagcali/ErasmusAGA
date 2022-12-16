@@ -25,31 +25,7 @@
         <vbox id="mainVBox">
             <hbox id="mainHbox">
                 <vbox id="leftSide">
-                    <vbox >
-                        <hbox>
-                            <label id="student_id" value="ID" stylename="import-label-style" css="margin-right:100px"/>
-                            <textField id="input_id" stylename="inputTf-style" editable="false" />
-                        </hbox>
-                        <hbox>
-                            <label id="student_name" value="Student Name" stylename="import-label-style" css="margin-right:10px" />
-                            <textField id="input_name" stylename="inputTf-style" editable="false"  />
-                        </hbox>
-                        <hbox>
-                            <label id="total_point" value="Total Point" stylename="import-label-style" css="margin-right: 35px"/>
-                            <textField id="input_total_point" stylename="inputTf-style" editable="false"  />
-                        </hbox>
-                        <hbox>
-                            <label id="duration" value="Duration" stylename="import-label-style" css="margin-right: 50px"/>
-                            <textField id="input_duration" stylename="inputTf-style" editable="false" />
-                        </hbox>
-                        <hbox>
-                            <label id="status" value="Status" stylename="import-label-style" css="margin-right: 70px" />
-                            <textField id="input_status" stylename="inputTf-style" editable="false" />
-                        </hbox>
-
-                    </vbox>
                     <vbox id="commentsVbox">
-
                     </vbox>
                     <vbox id="addCommentVbox">
                         <textArea id="commentTxt" caption="Please enter Your Comment"/>
@@ -62,8 +38,33 @@
                 <vbox id="rightSide">
                     <checkBox id="seenByCC" dataContainer="applicationDc" property="seenByCC" caption="Seen1"/>
                     <checkBox id="seenByAdmin" dataContainer="applicationDc" property="seenByAdmin" caption="seen2"/>
+                    <hbox>
+                        <label id="student_name" value = "Name" stylename="import-label-style" css="margin-right:70px" />
+                        <textField  id="input_id" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.name" />
+                    </hbox>
+                    <hbox>
+                        <label id="student_id" value="ID" stylename="import-label-style" css="margin-right:100px"/>
+                        <textField id="input_name" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.bilkentID" />
+                    </hbox>
+                    <!--<hbox>
+                        <label id="student_department" value="Department" stylename="import-label-style" css="margin-right:55px"/>
+                        <textField id="input_department" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.department" />
+                    </hbox> -->
+                    <hbox>
+                        <label id="total_point" value = "Total Point" stylename="import-label-style" css="margin-right: 35px"/>
+                        <textField id="input_total_point" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.totalGrade"  />
+                    </hbox>
+                    <hbox>
+                        <label id="duration" value="Duration" stylename="import-label-style" css="margin-right: 50px"/>
+                        <textField id="input_duration" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="duration" />
+                    </hbox>
+                    <hbox>
+                        <label id="status" value="Status" stylename="import-label-style" css="margin-right: 70px" />
+                        <textField id="input_status" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="lastStatus.type.name"/>
+                    </hbox>
                 </vbox>
             </hbox>
         </vbox>
     </layout>
 </window>
+

@@ -15,4 +15,11 @@
         <property name="documents" view="_local"/>
         <property name="type"/>
     </view>
+    <view name="student-view" class="com.company.erasmusaga.entity.Student" extends="_local">
+        <property name="firstName"  />
+        <property name="lastName"/>
+        <property name="bilkentID"/>
+        <property name="email"/>
+        <property name="totalGrade"/>
+    </view>
 </views>
