@@ -5,12 +5,10 @@ import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.global.FileStorageException;
 import com.haulmont.cuba.gui.Fragments;
 import com.haulmont.cuba.gui.Notifications;
-import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.components.FileMultiUploadField;
 import com.haulmont.cuba.gui.components.HBoxLayout;
 import com.haulmont.cuba.gui.screen.*;
 import com.haulmont.cuba.gui.upload.FileUploadingAPI;
-import jdk.internal.org.jline.terminal.MouseEvent;
 
 import javax.inject.Inject;
 import java.util.List;
