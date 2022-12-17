@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://coordinatorProfile.caption"
+        messagesPack="com.company.erasmusaga.web.screens.coursecoordinator">
+    <data>
+        <instance id="ccDc" class="com.company.erasmusaga.entity.CourseCoordinator" view="_local"/>
+        <collection id="ccDctemp" class="com.company.erasmusaga.entity.CourseCoordinator" view="_local">
+            <loader id="ccDltemp">
+                <query>
+                    <![CDATA[select e from erasmusaga_CourseCoordinator e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <vbox id="rightSide" align="MIDDLE_CENTER">
+            <hbox align="MIDDLE_CENTER">
+                <label id="coordinator_name" value = "Name" stylename="import-label-style" css="margin-right:75px" />
+                <textField  id="input_name"  stylename="inputTf-style" editable="false" dataContainer="ccDc" property="name"/>
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="mail_id" value="Mail" stylename="import-label-style" css="margin-right: 90px"/>
+                <textField id="input_mail"  stylename="inputTf-style" editable="false" dataContainer="ccDc" property="email"/>
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="PASSWORD_id" value="password" stylename="import-label-style" css="margin-right: 75px"/>
+                <passwordField id="passwordField" stylename="inputTf-style" />
+                <checkBox id="showPasswordCb" caption="Show Password" css="margin-left: 10px"/>
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="new_password_id" value = "New Password" stylename="import-label-style" css="margin-right: 15px"/>
+                <textField id="input_new_password" stylename="inputTf-style"   />
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <button id="saveBtn" caption="Save Changes" stylename="savebtn-style" align="MIDDLE_CENTER" css="margin-left: 240px"/>
+            </hbox>
+
+        </vbox>
+    </layout>
+</window>
