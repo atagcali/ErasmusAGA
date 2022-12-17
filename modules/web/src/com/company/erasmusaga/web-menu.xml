@@ -4,8 +4,6 @@
     <item screen="erasmusaga_ApplicationListScreen" caption="mainMsg://menu_config.erasmusaga_ApplicationListScreen"
           insertBefore="administration"/>
     <menu id="application-erasmusaga" caption="mainMsg://menu_config.application-erasmusaga">
-        <item screen="erasmusaga_EditApplicationScreen"
-              caption="mainMsg://menu_config.erasmusaga_EditApplicationScreen"/>
         <item screen="erasmusaga_FileUpload" caption="mainMsg://menu_config.erasmusaga_FileUpload"/>
         <item screen="erasmusaga_ToDoListScreeenCc" caption="mainMsg://menu_config.erasmusaga_ToDoListScreeenCc"/>
         <item screen="erasmusaga_ToDoListScreenAdmin" caption="mainMsg://menu_config.erasmusaga_ToDoListScreenAdmin"/>
