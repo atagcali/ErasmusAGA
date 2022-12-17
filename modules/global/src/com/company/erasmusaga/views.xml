@@ -24,4 +24,9 @@
         <property name="email"/>
         <property name="totalGrade"/>
     </view>
+    <view name="course-view" class="com.company.erasmusaga.entity.Course" extends="_local">
+        <property name="syllabus" view="_local"/>
+        <property name="department" view="_local"/>
+        <property name="university" view="_local"/>
+    </view>
 </views>
