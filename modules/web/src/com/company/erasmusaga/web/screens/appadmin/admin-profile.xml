@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://adminProfile.caption"
+        messagesPack="com.company.erasmusaga.web.screens.appadmin">
+    <data>
+        <instance id="adminDc" class="com.company.erasmusaga.entity.AppAdmin" view="_local"/>
+        <collection id="adminDctemp" class="com.company.erasmusaga.entity.AppAdmin" view="_local">
+            <loader id="adminDltemp">
+                <query>
+                    <![CDATA[select e from erasmusaga_AppAdmin e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <vbox id="rightSide" align="MIDDLE_CENTER">
+            <hbox align="MIDDLE_CENTER">
+                <label id="admin_name" value = "Name" stylename="import-label-style" css="margin-right:75px" />
+                <textField  id="input_name"  stylename="inputTf-style" editable="false" dataContainer="adminDc" property="name"/>
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="mail_id" value="Mail" stylename="import-label-style" css="margin-right: 90px"/>
+                <textField id="input_mail"  stylename="inputTf-style" editable="false" dataContainer="adminDc" property="email"/>
+            </hbox>
+<!--                <checkBox id="showPasswordCb" caption="Show Password" align="MIDDLE_CENTER"/>-->
+            <hbox align="MIDDLE_CENTER">
+                <label id="PASSWORD_id" value="password" stylename="import-label-style" css="margin-left: 143px"/>
+                <passwordField id="passwordField" stylename="inputTf-style" />
+                <checkBox id="showPasswordCb" caption="Show Password" css="margin-left: 10px"/>
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="new_password_id" value = "New Password" stylename="import-label-style" css="margin-right: 15px"/>
+                <textField id="input_new_password" stylename="inputTf-style"   />
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <button id="saveBtn" caption="Save Changes" stylename="savebtn-style" align="MIDDLE_CENTER" css="margin-left: 240px"/>
+            </hbox>
+
+        </vbox>
+    </layout>
+</window>

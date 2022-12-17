@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Email;
 
 @Entity(name = "erasmusaga_CourseCoordinator")
 public class CourseCoordinator extends User {
@@ -22,4 +23,6 @@ public class CourseCoordinator extends User {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
+    public String getEmail(){return email;}
 }
