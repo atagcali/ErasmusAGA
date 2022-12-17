@@ -9,6 +9,6 @@
         <item screen="erasmusaga_FileUpload" caption="mainMsg://menu_config.erasmusaga_FileUpload"/>
         <item screen="erasmusaga_ToDoListScreeenCc" caption="mainMsg://menu_config.erasmusaga_ToDoListScreeenCc"/>
         <item screen="erasmusaga_ToDoListScreenAdmin" caption="mainMsg://menu_config.erasmusaga_ToDoListScreenAdmin"/>
-        <item screen="erasmusaga_StudentProfileScreen" caption="mainMsg://menu_config.erasmusaga_StudentProfileScreen"/>
+        <item screen="erasmusaga_StudentProfileScreen" caption="Student Profile"/>
     </menu>
 </menu-config>
