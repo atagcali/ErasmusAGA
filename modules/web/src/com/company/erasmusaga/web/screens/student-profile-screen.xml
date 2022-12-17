@@ -13,11 +13,35 @@
         </collection>
     </data>
     <layout>
-        <vbox align="MIDDLE_CENTER">
-            <hbox>
-                <label value="Öğrenci adı: " stylename="import-label-style"/>
-                <textField id="studentNameTf" dataContainer="studentDc" property="name" stylename="inputTf-style"/>
+        <vbox id="rightSide" align="MIDDLE_CENTER">
+            <hbox align="MIDDLE_CENTER">
+                <label id="student_name" value = "Name" stylename="import-label-style" css="margin-right:75px" />
+                <textField  id="input_name"  stylename="inputTf-style" />
             </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="mail_id" value="Mail" stylename="import-label-style" css="margin-right: 90px"/>
+                <textField id="input_mail"  stylename="inputTf-style" />
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="gpa_id" value="GPA" stylename="import-label-style" css="margin-right: 90px" />
+                <textField id="input_GPA"  stylename="inputTf-style"  />
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="bilkent_id" value="Bilkent ID" stylename="import-label-style" css="margin-right: 50px" />
+                <textField id="input_bilkent_id"  stylename="inputTf-style"  />
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="password_id" value = "Password" stylename="import-label-style" css="margin-right: 50px"/>
+                <textField id="input_password" stylename="inputTf-style"   />
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <label id="new_password_id" value = "New Password" stylename="import-label-style" css="margin-right: 15px"/>
+                <textField id="input_new_password" stylename="inputTf-style"   />
+            </hbox>
+            <hbox align="MIDDLE_CENTER">
+                <button id="saveBtn" caption="Save Changes" stylename="savebtn-style" align="MIDDLE_CENTER" css="margin-left: 240px"/>
+            </hbox>
+
         </vbox>
     </layout>
 </window>
