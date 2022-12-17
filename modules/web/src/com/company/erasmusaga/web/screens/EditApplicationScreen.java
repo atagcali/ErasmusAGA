@@ -2,6 +2,7 @@ package com.company.erasmusaga.web.screens;
 
 import com.company.erasmusaga.entity.Application;
 import com.company.erasmusaga.entity.Comment;
+import com.company.erasmusaga.entity.University;
 import com.company.erasmusaga.web.dialog.FileUpload;
 import com.company.erasmusaga.web.fragments.CommentFragment;
 import com.google.common.collect.ImmutableMap;
@@ -14,6 +15,7 @@ import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.components.TextArea;
 import com.haulmont.cuba.gui.components.VBoxLayout;
+import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.model.InstanceContainer;
 import com.haulmont.cuba.gui.screen.*;
@@ -45,12 +47,16 @@ public class EditApplicationScreen extends Screen {
     @Inject
     private ScreenBuilders screenBuilders;
     List<FileDescriptor> files = new ArrayList<>();
+    @Inject
+    private CollectionContainer<University> unisDc;
+
     @Subscribe
     public void onInit(InitEvent event) {
         MapScreenOptions options = (MapScreenOptions) event.getOptions();
         applicationDc.setItem((Application) options.getParams().get("application"));
         commentDl.setParameter("application",applicationDc.getItemOrNull());
         loadComments();
+        unisDc.setItems(applicationDc.getItem().getUniversities());
     }
 
     @Subscribe("saveCommentBtn")
