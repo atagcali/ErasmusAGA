@@ -12,7 +12,13 @@
                     <label id="sheet_lbl" value="Sheet Name :" stylename="import-label-style"/>
                     <textField id="inputSheet_txt" stylename="inputTf-style"/>
                 </hbox>
-                <button id="importBtn" caption="Import this file" stylename="importBtn-style" align="MIDDLE_CENTER"/>
+                <hbox>
+                    <label id="startIndexLbl" value="Starting index of applications in the excel file : " stylename="import-label-style"/>
+                    <textField id="startIndexTf" stylename="import-index-style" datatype="int"/>
+                    <label id="endIndexLbl" value="End Index :" stylename="import-label-style"/>
+                    <textField id="endIndexTf" stylename="import-index-style" datatype="int"/>
+                    <button id="importBtn" caption="Import this file" stylename="importBtn-style"/>
+                </hbox>
                 <button id="importUniBtn" caption="import unis"/>
                 <button id="importCourseBtn" caption="import courses" visible="false"/>
             </vbox>

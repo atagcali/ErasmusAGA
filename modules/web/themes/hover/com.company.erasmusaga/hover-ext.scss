@@ -21,9 +21,10 @@
   background: #D1EDF9 !important;
 }
 .importBtn-style{
-  margin-left: 550px !important;
+  margin-left: 50px !important;
   background: darkslateblue !important;
   color: #FFEFF3 !important;
+  border-radius: 6px !important;
 }
 .inputTf-style{
   margin-left: 50px !important;
@@ -35,6 +36,12 @@
   font-size: medium;
   margin-left: 50px;
   margin-bottom: 25px;
+}
+.import-index-style{
+  margin-left: 10px !important;
+  width: 50px !important;
+  border-radius: 6px!important;
+  background: #D1EDF9 !important;
 }
 .v-window-contents{
   @include linear-gradient(109.14deg, #FFEFF3 11.09%, #EADBFC 104.94%);

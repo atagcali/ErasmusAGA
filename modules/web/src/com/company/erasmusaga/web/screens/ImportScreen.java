@@ -30,6 +30,10 @@ public class ImportScreen extends Screen {
     private DataManager dataManager;
     @Inject
     private TextField<String> inputSheet_txt;
+    @Inject
+    private TextField<Integer> startIndexTf;
+    @Inject
+    private TextField<Integer> endIndexTf;
 
     @Subscribe
     public void onInit(InitEvent event) {
@@ -60,7 +64,7 @@ public class ImportScreen extends Screen {
 
             // Iterate over rows and columns.
             for (int r = 0; r <= rowCount; r++) {
-                if (r > 0 && r < 48) {
+                if (r >= startIndexTf.getValue()-1 && r <= endIndexTf.getValue()-1) {
                     Student student = dataManager.create(Student.class);
                     Application application = dataManager.create(Application.class);
                     ccc.addInstanceToCommit(student);
