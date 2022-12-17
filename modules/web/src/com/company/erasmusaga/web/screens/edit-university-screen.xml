@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editUniversityScreen.caption"
+        messagesPack="com.company.erasmusaga.web.screens">
+    <data>
+        <instance id="universityDc" class="com.company.erasmusaga.entity.University" view="_local"/>
+        <collection id="universityCoursesDc" class="com.company.erasmusaga.entity.Course" view="_local">
+            <loader id="universityCoursesL">
+                <query>
+                    <![CDATA[select e from erasmusaga_Course e]]>
+                    <condition>
+                        <and>
+                            <jpql>
+                                <where>
+                                    e.university=:university
+                                </where>
+                            </jpql>
+                        </and>
+                    </condition>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <vbox id="mainVBox">
+            <hbox id="mainHbox">
+                <vbox id="leftSide">
+                    <hbox>
+                        <label id="university_name" value = "Name" stylename="edit-university-label-style" />
+                        <textField  id="input_university_name" dataContainer="universityDc" stylename="inputTf-style" editable="false" property="name"/>
+                    </hbox>
+                    <hbox>
+                        <label id="university_country" value="Country" stylename="edit-university-label-style"/>
+                        <textField id="input_university_country" dataContainer="universityDc" stylename="inputTf-style" editable="false" property="country"/>
+                    </hbox>
+                    <hbox>
+                        <label id="university_agreement_type" value = "Agreement Type" stylename="edit-university-label-style"/>
+                        <textField id="input_university_agreement_type" dataContainer="universityDc" stylename="inputTf-style" editable="false" property="agreementType"/>
+                    </hbox>
+                    <hbox>
+                        <label id="university_passing_grade" value="Passing Grade" stylename="edit-university-label-style" />
+                        <textField id="input_university_passing_grade" dataContainer="universityDc" stylename="inputTf-style" editable="false" property="passingGrade"/>
+                    </hbox>
+                    <hbox>
+                        <label id="university_highest_grade" value="Highest Grade" stylename="edit-university-label-style" />
+                        <textField id="input_university_highest_grade" dataContainer="universityDc" stylename="inputTf-style" editable="false" property="highestGrade"/>
+                    </hbox>
+                    <hbox>
+                        <label id="university_lowest_grade" value="Lowest Grade" stylename="edit-university-label-style" />
+                        <textField id="input_university_lowest_grade" dataContainer="universityDc" stylename="inputTf-style" editable="false" property="lowestGrade"/>
+                    </hbox>
+                </vbox>
+                <vbox id="rightSide">
+                    <hbox id="courseList">
+                        <dataGrid id="universityCoursesDG" dataContainer="universityCoursesDc" width="400px" css="margin-left:100px">
+                            <columns>
+                                <column width="100px" caption="Course Name" property="name"/>
+                                <column width="100px" caption="Course Code" property="code"/>
+                                <column width="200px" caption="Exempted Bilkent Course Code" property="exemptedBilkentCourseCode"/>
+                            </columns>
+                            <rowsCount/>
+                        </dataGrid>
+                    </hbox>
+                    <hbox id="button">
+                        <button id="addCourseButton" caption="Add Course" stylename="furkan"/>
+                    </hbox>
+                </vbox>
+
+            </hbox>
+        </vbox>
+    </layout>
+</window>

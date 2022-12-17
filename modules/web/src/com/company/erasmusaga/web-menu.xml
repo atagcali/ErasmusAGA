@@ -4,11 +4,11 @@
     <item screen="erasmusaga_ApplicationListScreen" caption="mainMsg://menu_config.erasmusaga_ApplicationListScreen"
           insertBefore="administration"/>
     <menu id="application-erasmusaga" caption="mainMsg://menu_config.application-erasmusaga">
-        <item screen="erasmusaga_FileUpload" caption="mainMsg://menu_config.erasmusaga_FileUpload"/>
         <item screen="erasmusaga_ToDoListScreeenCc" caption="mainMsg://menu_config.erasmusaga_ToDoListScreeenCc"/>
         <item screen="erasmusaga_ToDoListScreenAdmin" caption="mainMsg://menu_config.erasmusaga_ToDoListScreenAdmin"/>
         <item screen="erasmusaga_StudentProfileScreen" caption="mainMsg://menu_config.erasmusaga_StudentProfileScreen"/>
         <item screen="erasmusaga_CoordinatorProfile" caption="mainMsg://menu_config.erasmusaga_CoordinatorProfile"/>
         <item screen="erasmusaga_AdminProfile" caption="mainMsg://menu_config.erasmusaga_AdminProfile"/>
+        <item screen="erasmusaga_UniversityListScreen" caption="mainMsg://menu_config.erasmusaga_UniversityListScreen"/>
     </menu>
 </menu-config>
