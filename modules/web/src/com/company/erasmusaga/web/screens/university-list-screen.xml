@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://universityListScreen.caption"
+        messagesPack="com.company.erasmusaga.web.screens">
+    <data>
+        <collection id="universityDc" class="com.company.erasmusaga.entity.University" view="_local">
+            <loader id="universityDl">
+                <query>
+                    <![CDATA[select e from erasmusaga_University e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <dataGrid id="universityDG" dataContainer="universityDc" width="600px" css="margin-left: 100px">
+            <columns>
+                <column width="300px" caption="University Name" property="name"/>
+                <column width="150px" caption="University Country" property="country"/>
+                <column width="150px" caption="Agreement Type" property="agreementType"/>
+            </columns>
+            <rowsCount/>
+        </dataGrid>
+    </layout>
+</window>

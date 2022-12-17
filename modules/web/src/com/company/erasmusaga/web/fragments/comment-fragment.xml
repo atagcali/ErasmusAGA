@@ -3,7 +3,7 @@
     <layout>
         <vbox id="Vbox" css="margin-bottom:25px" stylename="text-area-style">
             <label id="userLbl"/>
-            <textArea id="commentTxt" stylename="text-area-style"/>
+            <textArea id="commentTxt" stylename="text-area-style" editable="false"/>
         </vbox>
     </layout>
 </fragment>
