@@ -4,6 +4,7 @@
         messagesPack="com.company.erasmusaga.web.screens">
     <data>
         <instance id="applicationDc" class="com.company.erasmusaga.entity.Application" view="application-view"/>
+        <collection id="unisDc" class="com.company.erasmusaga.entity.University" view="_local"/>
         <collection id="commentDc" class="com.company.erasmusaga.entity.Comment" view="comment-view">
             <loader id="commentDl">
                 <query>
@@ -62,6 +63,13 @@
                         <label id="status" value="Status" stylename="import-label-style" css="margin-right: 70px" />
                         <textField id="input_status" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="lastStatus.type.name"/>
                     </hbox>
+                    <dataGrid id="unisDG" dataContainer="unisDc" css="margin-left:50px">
+                        <columns>
+                            <column property="name"/>
+                            <column property="country"/>
+                            <column property="agreementType"/>
+                        </columns>
+                    </dataGrid>
                 </vbox>
             </hbox>
         </vbox>
