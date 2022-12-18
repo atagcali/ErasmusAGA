@@ -6,6 +6,7 @@ import com.haulmont.cuba.core.global.CommitContext;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.components.TextField;
+import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.screen.Screen;
 import com.haulmont.cuba.gui.screen.Subscribe;
 import com.haulmont.cuba.gui.screen.UiController;
@@ -34,10 +35,50 @@ public class ImportScreen extends Screen {
     private TextField<Integer> startIndexTf;
     @Inject
     private TextField<Integer> endIndexTf;
+    @Inject
+    private CollectionLoader<Application> applicationDl;
 
     @Subscribe
     public void onInit(InitEvent event) {
 
+    }
+
+    @Subscribe("placeStudents")
+    public void onPlaceStudentsClick(Button.ClickEvent event) {
+        CommitContext cc = new CommitContext();
+        applicationDl.setParameter("lastStatus", "In the evaluation");
+        applicationDl.load();
+        for (Application mutableItem : applicationDl.getContainer().getMutableItems()) {
+            boolean placed = false;
+            for (University university : mutableItem.getUniversities()) {
+                if(university.isAvailable()){
+                    mutableItem.getStudent().setAcceptedUniversity(university);
+                    university.getAcceptedStudents().add(mutableItem.getStudent());
+                    cc.addInstanceToCommit(mutableItem.getStudent());
+                    cc.addInstanceToCommit(university);
+                    placed = true;
+                }
+            }
+            Status status = dataManager.create(Status.class);
+            status.setApplication(mutableItem);
+            mutableItem.setLastStatus(status);
+            if (placed){
+                status.setType(dataManager.load(StatusType.class)
+                        .query("e.name=:name")
+                        .parameter("name", "Approved").one());
+                cc.addInstanceToCommit(status);
+                cc.addInstanceToCommit(mutableItem);
+            }
+            else{
+                status.setType(dataManager.load(StatusType.class)
+                        .query("e.name=:name")
+                        .parameter("name", "Declined").one());
+                cc.addInstanceToCommit(mutableItem);
+                cc.addInstanceToCommit(status);
+            }
+        //
+        }
+        dataManager.commit(cc);
     }
 
 

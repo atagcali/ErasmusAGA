@@ -2,8 +2,27 @@
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         caption="msg://importScreen.caption"
         messagesPack="com.company.erasmusaga.web.screens">
+    <data>
+        <collection id="applicationDc" class="com.company.erasmusaga.entity.Application" view="application-view">
+            <loader id="applicationDl">
+                <query>
+                    <![CDATA[select e from erasmusaga_Application e order by e.student.totalGrade DESC]]>
+                    <condition>
+                        <and>
+                            <jpql>
+                                <where>
+                                    e.lastStatus.type.name=:lastStatus
+                                </where>
+                            </jpql>
+                        </and>
+                    </condition>
+                </query>
+            </loader>
+        </collection>
+    </data>
     <layout>
         <vbox align="MIDDLE_CENTER">
+            <button id="placeStudents" caption="Place Students"/>
             <label id="info_label" value="Please enter the local path of excel file" stylename="import-label-style"/>
             <vbox>
                 <hbox>

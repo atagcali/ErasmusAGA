@@ -1,7 +1,9 @@
 package com.company.erasmusaga.web.screens;
 
 import com.company.erasmusaga.entity.Application;
+import com.company.erasmusaga.entity.StatusType;
 import com.google.common.collect.ImmutableMap;
+import com.haulmont.cuba.core.global.CommitContext;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.DataGrid;
@@ -26,6 +28,15 @@ public class ApplicationListScreen extends Screen {
     public void onInit(InitEvent event) {
         applicationDl.setMaxResults(20);
         applicationDl.load();
+//        for (Application mutableItem : applicationDl.getContainer().getMutableItems()) {
+//            CommitContext cc = new CommitContext();
+//            mutableItem.getLastStatus().setType(dataManager.load(StatusType.class)
+//                    .query("e.name=:name")
+//                    .parameter("name", "In the evaluation").one());
+//            cc.addInstanceToCommit(mutableItem);
+//            cc.addInstanceToCommit(mutableItem.getLastStatus());
+//            dataManager.commit(cc);
+//        }
    }
 
     @Subscribe("applicationDG")
