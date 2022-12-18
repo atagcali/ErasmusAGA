@@ -70,6 +70,9 @@
                             <column property="agreementType"/>
                         </columns>
                     </dataGrid>
+                    <hbox css="margin-top: 20px">
+                        <button caption="Cancel Application" id="cancelBtn" stylename="cancel-btn-style"/>
+                    </hbox>
                 </vbox>
             </hbox>
         </vbox>
