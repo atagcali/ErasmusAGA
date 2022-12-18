@@ -3,6 +3,7 @@ package com.company.erasmusaga.web.screens;
 import com.company.erasmusaga.entity.Application;
 import com.company.erasmusaga.entity.Course;
 import com.company.erasmusaga.web.fragments.FileFragment;
+import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.gui.Fragments;
 import com.haulmont.cuba.gui.components.HBoxLayout;
 import com.haulmont.cuba.gui.model.InstanceContainer;
@@ -24,10 +25,18 @@ public class CourseScreen extends Screen {
     public void onInit(InitEvent event) {
         MapScreenOptions options = (MapScreenOptions) event.getOptions();
         courseDc.setItem((Course) options.getParams().get("course"));
-        FileFragment fragment = fragments.create(this, FileFragment.class);
-        fragment.setAdd(false);
-        fragment.setFileDescriptor(courseDc.getItem().getSyllabus());
-        syllabusHbox.add(fragment.getFragment());
+//        for (FileDescriptor syllabus : courseDc.getItem().getSyllabus()) {
+//            FileFragment fragment = fragments.create(this, FileFragment.class);
+//            fragment.setAdd(false);
+//            fragment.setFileDescriptor(syllabus);
+//            syllabusHbox.add(fragment.getFragment());
+//        }
+        if(courseDc.getItem().getSyllabus()!=null){
+            FileFragment fragment = fragments.create(this, FileFragment.class);
+            fragment.setAdd(false);
+            fragment.setFileDescriptor(courseDc.getItem().getSyllabus());
+            syllabusHbox.add(fragment.getFragment());
+        }
     }
     
 }
