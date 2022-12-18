@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://addCourseScreen.caption"
+        messagesPack="com.company.erasmusaga.web.screens">
+    <data>
+        <instance id="courseDc" class="com.company.erasmusaga.entity.Course" view="course-view"/>
+        <collection id="departmentDc" class="com.company.erasmusaga.entity.Department" view="department-view">
+            <loader id="departmentDl">
+                <query>
+                    <![CDATA[select e from erasmusaga_Department e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <hbox id="mainHbox">
+            <vbox id="leftSide">
+                <hbox>
+                    <label id="course_name" value = "Name" stylename="gokberk" />
+                    <textField  id="input_course_name" dataContainer="courseDc" stylename="gokberk2" editable="true" property="name"/>
+                </hbox>
+                <hbox>
+                    <label id="course_code" value="Code" stylename="gokberk"/>
+                    <textField id="input_course_code" dataContainer="courseDc" stylename="gokberk2" editable="true" property="code"/>
+                </hbox>
+                <hbox>
+                    <label id="course_credit" value = "Credit" stylename="gokberk"/>
+                    <textField id="input_course_credit" dataContainer="courseDc" stylename="gokberk2" editable="true" property="credit"/>
+                </hbox>
+                <hbox>
+                    <label id="exempted_bilkent_course_name" value="Exempted Bilkent Course Name" stylename="gokberk" />
+                    <textField id="input_exempted_bilkent_course_name" dataContainer="courseDc" stylename="gokberk2" editable="true" property="exemptedBilkentCourseName"/>
+                </hbox>
+                <hbox>
+                    <label id="exempted_bilkent_course_code" value="Exempted Bilkent Course Code" stylename="gokberk" />
+                    <textField id="input_exempted_bilkent_course_code" dataContainer="courseDc" stylename="gokberk2" editable="true" property="exemptedBilkentCourseCode"/>
+                </hbox>
+                <hbox>
+                    <label id="exempted_bilkent_course_credit" value="Exempted Bilkent Course Credit" stylename="gokberk" />
+                    <textField id="input_exempted_bilkent_course_credit" dataContainer="courseDc" stylename="gokberk2" editable="true" property="exemptedBilkentCourseCredit"/>
+                </hbox>
+                <hbox>
+                    <label id="course_department" value="Course Department" stylename="gokberk" />
+                    <lookupField optionsContainer="departmentDc" id="input_course_department" dataContainer="courseDc" stylename="gokberk2" editable="true" property="department"/>
+                </hbox>
+                <hbox>
+                    <label id="course_university" value="Course University" stylename="gokberk" />
+                    <textField id="input_course_university" dataContainer="courseDc" stylename="gokberk2" editable="false" property="university.name"/>
+                </hbox>
+                <hbox id="syllabusHbox">
+                    <label id="syllabus_description" stylename="gokberk" value="Syllabus"/>
+                    <button id="import_syllabus" stylename="gokberk2" caption="Import Syllabus" invoke="importSyllabus"/>
+                </hbox>
+                <hbox>
+                    <button id="save_button" stylename="gokberk" caption="Save Course" invoke="saveButtonPressed"/>
+                </hbox>
+            </vbox>
+        </hbox>
+    </layout>
+</window>

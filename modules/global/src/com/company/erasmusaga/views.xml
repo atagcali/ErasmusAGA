@@ -6,7 +6,7 @@
         <property name="student" view="_local"/>
         <property name="lastStatus" view="status-view"/>
         <property name="duration" view="_local"/>
-        <property name="universities" view="_local"/>
+        <property name="universities" view="university-view"/>
     </view>
     <view name="status-view" class="com.company.erasmusaga.entity.Status" extends="_local">
         <property name="type" view="_local"/>
@@ -18,15 +18,26 @@
         <property name="createTs"/>
     </view>
     <view name="student-view" class="com.company.erasmusaga.entity.Student" extends="_local">
-        <property name="firstName"  />
+        <property name="firstName"/>
         <property name="lastName"/>
         <property name="bilkentID"/>
         <property name="email"/>
         <property name="totalGrade"/>
     </view>
+    <view name="university-view" class="com.company.erasmusaga.entity.University" extends="_local">
+        <property name="courses" view="course-view"/>
+        <property name="createTs"/>
+        <property name="requirements" view="_local"/>
+        <property name="policies" view="_local"/>
+    </view>
+    <view name="department-view" class="com.company.erasmusaga.entity.Department" extends="_local">
+        <property name="courses"/>
+        <property name="updateTs"/>
+        <property name="createTs"/>
+    </view>
     <view name="course-view" class="com.company.erasmusaga.entity.Course" extends="_local">
         <property name="syllabus" view="_local"/>
-        <property name="department" view="_local"/>
-        <property name="university" view="_local"/>
+        <property name="department" view="department-view"/>
+        <property name="university"/>
     </view>
 </views>

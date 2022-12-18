@@ -18,7 +18,7 @@ public class Department extends StandardEntity {
     private static final long serialVersionUID = -1362898608128270131L;
 
     @Column(name = "NAME")
-    private String name;
+    protected String name;
 
     @OnDelete(DeletePolicy.CASCADE)
     @OneToMany(mappedBy = "department")

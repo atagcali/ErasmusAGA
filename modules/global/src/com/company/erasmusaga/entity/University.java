@@ -17,7 +17,7 @@ public class University extends StandardEntity {
     private static final long serialVersionUID = 8328773308797842280L;
 
     @Column(name = "NAME")
-    private String name;
+    protected String name;
 
     @Column(name = "AGREEMENT_TYPE")
     private String agreementType;
@@ -35,7 +35,7 @@ public class University extends StandardEntity {
     private String passingGrade;
 
     @Column(name = "DEPARTMENT")
-    private String department;
+    protected String department;
 
     @OneToMany(mappedBy = "university")
     private List<Course> courses;
