@@ -19,6 +19,12 @@ public class University extends StandardEntity {
     @Column(name = "NAME")
     private String name;
 
+    @Column(name = "QUOTA")
+    private Integer quota;
+
+    @OneToMany(mappedBy = "acceptedUniversity")
+    private List<Student> acceptedStudents;
+
     @Column(name = "AGREEMENT_TYPE")
     private String agreementType;
 
@@ -51,6 +57,22 @@ public class University extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "REQUIREMENTS_ID")
     private FileDescriptor requirements;
+
+    public List<Student> getAcceptedStudents() {
+        return acceptedStudents;
+    }
+
+    public void setAcceptedStudents(List<Student> acceptedStudents) {
+        this.acceptedStudents = acceptedStudents;
+    }
+
+    public Integer getQuota() {
+        return quota;
+    }
+
+    public void setQuota(Integer quota) {
+        this.quota = quota;
+    }
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
@@ -130,6 +152,13 @@ public class University extends StandardEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isAvailable () {
+        if(this.acceptedStudents.size() <= quota)
+            return true;
+        else
+            return false;
     }
 
     @PrePersist
