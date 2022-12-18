@@ -21,6 +21,17 @@ public class Student extends User {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "APPLICATION_ID")
     private Application application;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ACCEPTED_UNIVERSITY_ID")
+    private University acceptedUniversity;
+
+    public University getAcceptedUniversity() {
+        return acceptedUniversity;
+    }
+
+    public void setAcceptedUniversity(University acceptedUniversity) {
+        this.acceptedUniversity = acceptedUniversity;
+    }
 
     public void setBilkentID(Integer bilkentID) {
         this.bilkentID = bilkentID;
