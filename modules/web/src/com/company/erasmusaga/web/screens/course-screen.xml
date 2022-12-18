@@ -9,39 +9,39 @@
             <hbox id="mainHbox">
                 <vbox id="leftSide">
                     <hbox>
-                        <label id="course_name" value = "Name" stylename="edit-university-label-style" />
-                        <textField  id="input_course_name" dataContainer="courseDc" stylename="inputTf-style" editable="false" property="name"/>
+                        <label id="course_name" value = "Name" stylename="gokberk" />
+                        <textField  id="input_course_name" dataContainer="courseDc" stylename="gokberk2" editable="false" property="name"/>
                     </hbox>
                     <hbox>
-                        <label id="course_code" value="Code" stylename="edit-university-label-style"/>
-                        <textField id="input_course_code" dataContainer="courseDc" stylename="inputTf-style" editable="false" property="code"/>
+                        <label id="course_code" value="Code" stylename="gokberk"/>
+                        <textField id="input_course_code" dataContainer="courseDc" stylename="gokberk2" editable="false" property="code"/>
                     </hbox>
                     <hbox>
-                        <label id="course_credit" value = "Credit" stylename="edit-university-label-style"/>
-                        <textField id="input_course_credit" dataContainer="courseDc" stylename="inputTf-style" editable="false" property="credit"/>
+                        <label id="course_credit" value = "Credit" stylename="gokberk"/>
+                        <textField id="input_course_credit" dataContainer="courseDc" stylename="gokberk2" editable="false" property="credit"/>
                     </hbox>
                     <hbox>
-                        <label id="exempted_bilkent_course_name" value="Exempted Bilkent Course Name" stylename="edit-university-label-style" />
-                        <textField id="input_exempted_bilkent_course_name" dataContainer="courseDc" stylename="inputTf-style" editable="false" property="exemptedBilkentCourseName"/>
+                        <label id="exempted_bilkent_course_name" value="Exempted Bilkent Course Name" stylename="gokberk" />
+                        <textField id="input_exempted_bilkent_course_name" dataContainer="courseDc" stylename="gokberk2" editable="false" property="exemptedBilkentCourseName"/>
                     </hbox>
                     <hbox>
-                        <label id="exempted_bilkent_course_code" value="Exempted Bilkent Course Code" stylename="edit-university-label-style" />
-                        <textField id="input_exempted_bilkent_course_code" dataContainer="courseDc" stylename="inputTf-style" editable="false" property="exemptedBilkentCourseCode"/>
+                        <label id="exempted_bilkent_course_code" value="Exempted Bilkent Course Code" stylename="gokberk" />
+                        <textField id="input_exempted_bilkent_course_code" dataContainer="courseDc" stylename="gokberk2" editable="false" property="exemptedBilkentCourseCode"/>
                     </hbox>
                     <hbox>
-                        <label id="exempted_bilkent_course_credit" value="Exempted Bilkent Course Credit" stylename="edit-university-label-style" />
-                        <textField id="input_exempted_bilkent_course_credit" dataContainer="courseDc" stylename="inputTf-style" editable="false" property="exemptedBilkentCourseCredit"/>
+                        <label id="exempted_bilkent_course_credit" value="Exempted Bilkent Course Credit" stylename="gokberk" />
+                        <textField id="input_exempted_bilkent_course_credit" dataContainer="courseDc" stylename="gokberk2" editable="false" property="exemptedBilkentCourseCredit"/>
                     </hbox>
                     <hbox>
-                        <label id="course_department" value="Course Department" stylename="edit-university-label-style" />
-                        <textField id="input_course_department" dataContainer="courseDc" stylename="inputTf-style" editable="false" property="department.name"/>
+                        <label id="course_department" value="Course Department" stylename="gokberk" />
+                        <textField id="input_course_department" dataContainer="courseDc" stylename="gokberk2" editable="false" property="department.name"/>
                     </hbox>
                     <hbox>
-                        <label id="course_university" value="Course University" stylename="edit-university-label-style" />
-                        <textField id="input_course_university" dataContainer="courseDc" stylename="inputTf-style" editable="false" property="university.name"/>
+                        <label id="course_university" value="Course University" stylename="gokberk" />
+                        <textField id="input_course_university" dataContainer="courseDc" stylename="gokberk2" editable="false" property="university.name"/>
                     </hbox>
-                    <hbox id="syllabusHbox" css="margin-left: 20px">
-                        <label id="button_description" stylename="edit-university-label-style" value="Syllabus" css="margin-right: 50px"/>
+                    <hbox id="syllabusHbox">
+                        <label id="button_description" stylename="gokberk3" value="Syllabus"/>
                     </hbox>
                 </vbox>
             </hbox>

@@ -3,8 +3,8 @@
         caption="msg://editUniversityScreen.caption"
         messagesPack="com.company.erasmusaga.web.screens">
     <data>
-        <instance id="universityDc" class="com.company.erasmusaga.entity.University" view="_local"/>
-        <collection id="universityCoursesDc" class="com.company.erasmusaga.entity.Course" view="_local">
+        <instance id="universityDc" class="com.company.erasmusaga.entity.University" view="university-view"/>
+        <collection id="universityCoursesDc" class="com.company.erasmusaga.entity.Course" view="course-view">
             <loader id="universityCoursesL">
                 <query>
                     <![CDATA[select e from erasmusaga_Course e]]>
@@ -62,7 +62,7 @@
                         </dataGrid>
                     </hbox>
                     <hbox id="button">
-                        <button id="addCourseButton" caption="Add Course" stylename="furkan"/>
+                        <button id="addCourseButton" caption="Add Course" stylename="furkan" invoke="buttonPressed"/>
                     </hbox>
                 </vbox>
 
