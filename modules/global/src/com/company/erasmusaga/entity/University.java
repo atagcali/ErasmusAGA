@@ -17,7 +17,7 @@ public class University extends StandardEntity {
     private static final long serialVersionUID = 8328773308797842280L;
 
     @Column(name = "NAME")
-    private String name;
+    protected String name;
 
     @Column(name = "QUOTA")
     private Integer quota;
@@ -41,7 +41,7 @@ public class University extends StandardEntity {
     private String passingGrade;
 
     @Column(name = "DEPARTMENT")
-    private String department;
+    protected String department;
 
     @OneToMany(mappedBy = "university")
     private List<Course> courses;

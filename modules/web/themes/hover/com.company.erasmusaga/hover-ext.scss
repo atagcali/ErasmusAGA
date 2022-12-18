@@ -57,6 +57,27 @@
   margin-left: 100px !important;
   margin-top: 25px !important;
 }
+
+.gokberk{
+  font-size: medium;
+  display: inline-block;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.gokberk2{
+  margin-left: 150px !important;
+  width: 350px !important;
+  border-radius: 6px!important;
+  background: #D1EDF9 !important;
+}
+
+.gokberk3{
+  font-size: medium;
+  margin-left: 0px !important;
+  width: 300px !important;
+}
+
 .v-window-contents{
   @include linear-gradient(109.14deg, #FFEFF3 11.09%, #EADBFC 104.94%);
 }
