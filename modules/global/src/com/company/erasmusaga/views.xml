@@ -7,6 +7,7 @@
         <property name="lastStatus" view="status-view"/>
         <property name="duration" view="_local"/>
         <property name="universities" view="_local"/>
+        <property name="statuses" view="status-view"/>
     </view>
     <view name="status-view" class="com.company.erasmusaga.entity.Status" extends="_local">
         <property name="type" view="_local"/>
