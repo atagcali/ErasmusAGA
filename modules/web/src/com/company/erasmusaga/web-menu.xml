@@ -11,5 +11,6 @@
         <item screen="erasmusaga_AdminProfile" caption="mainMsg://menu_config.erasmusaga_AdminProfile"/>
         <item screen="erasmusaga_UniversityListScreen" caption="mainMsg://menu_config.erasmusaga_UniversityListScreen"/>
         <item screen="erasmusaga_AddCourseScreen" caption="mainMsg://menu_config.erasmusaga_AddCourseScreen"/>
+        <item screen="erasmusaga_MyApplication" caption="mainMsg://menu_config.erasmusaga_MyApplication"/>
     </menu>
 </menu-config>
