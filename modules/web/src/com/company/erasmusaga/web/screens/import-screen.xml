@@ -38,7 +38,7 @@
                     <textField id="endIndexTf" stylename="import-index-style" datatype="int"/>
                     <button id="importBtn" caption="Import this file" stylename="importBtn-style"/>
                 </hbox>
-                <button id="importUniBtn" caption="import unis"/>
+                <button id="importUniBtn" caption="import unis" visible="false"/>
                 <button id="importCourseBtn" caption="import courses" visible="false"/>
             </vbox>
         </vbox>
