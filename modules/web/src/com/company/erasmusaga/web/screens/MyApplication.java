@@ -25,6 +25,7 @@ public class MyApplication extends EditApplicationScreen {
         if(applicationDc.getItemOrNull().getLastStatus().getType().getName().equals("Canceled")){
             cancelBtn.setVisible(false);
         }
+        setSeenEnabled();
     }
 
 }

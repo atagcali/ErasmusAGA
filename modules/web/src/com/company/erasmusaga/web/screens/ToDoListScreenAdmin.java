@@ -10,8 +10,7 @@ import com.haulmont.cuba.gui.screen.UiDescriptor;
 public class ToDoListScreenAdmin extends ApplicationListScreen {
     @Override
     public void onInit(InitEvent event) {
-        applicationDl.setMaxResults(20);
         applicationDl.setParameter("seenByAdmin", false);
-        applicationDl.load();
+        super.onInit(event);
     }
 }

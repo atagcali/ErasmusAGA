@@ -28,15 +28,6 @@ public class ApplicationListScreen extends Screen {
     public void onInit(InitEvent event) {
         applicationDl.setMaxResults(20);
         applicationDl.load();
-//        for (Application mutableItem : applicationDl.getContainer().getMutableItems()) {
-//            CommitContext cc = new CommitContext();
-//            mutableItem.getLastStatus().setType(dataManager.load(StatusType.class)
-//                    .query("e.name=:name")
-//                    .parameter("name", "In the evaluation").one());
-//            cc.addInstanceToCommit(mutableItem);
-//            cc.addInstanceToCommit(mutableItem.getLastStatus());
-//            dataManager.commit(cc);
-//        }
    }
 
     @Subscribe("applicationDG")

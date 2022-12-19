@@ -7,14 +7,12 @@ import com.google.common.collect.ImmutableMap;
 import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.global.CommitContext;
 import com.haulmont.cuba.core.global.DataManager;
+import com.haulmont.cuba.core.global.Security;
 import com.haulmont.cuba.gui.*;
 import com.haulmont.cuba.gui.app.core.inputdialog.DialogActions;
 import com.haulmont.cuba.gui.app.core.inputdialog.DialogOutcome;
 import com.haulmont.cuba.gui.app.core.inputdialog.InputDialog;
-import com.haulmont.cuba.gui.components.Button;
-import com.haulmont.cuba.gui.components.Label;
-import com.haulmont.cuba.gui.components.TextArea;
-import com.haulmont.cuba.gui.components.VBoxLayout;
+import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.model.InstanceContainer;
@@ -57,6 +55,12 @@ public class EditApplicationScreen extends Screen {
     CommitContext ccc = new CommitContext();
     @Inject
     protected Button cancelBtn;
+    @Inject
+    private Security security;
+    @Inject
+    private CheckBox seenByCC;
+    @Inject
+    private CheckBox seenByAdmin;
 
     @Subscribe
     public void onInit(InitEvent event) {
@@ -67,6 +71,16 @@ public class EditApplicationScreen extends Screen {
         unisDc.setItems(applicationDc.getItem().getUniversities());
         if(applicationDc.getItemOrNull().getLastStatus().getType().getName().equals("Canceled")){
             cancelBtn.setVisible(false);
+        }
+        setSeenEnabled();
+    }
+
+    public void setSeenEnabled(){
+        if(!security.isSpecificPermitted("list.enableCC")){
+            seenByCC.setEditable(false);
+        }
+        if(!security.isSpecificPermitted("list.enableAdmin")){
+            seenByAdmin.setEditable(false);
         }
     }
 

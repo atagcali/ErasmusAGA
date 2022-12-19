@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <item screen="erasmusaga_ImportScreen" caption="mainMsg://menu_config.erasmusaga_ImportScreen" insertBefore="administration"/>
+    <item screen="erasmusaga_MyApplication" caption="mainMsg://menu_config.erasmusaga_MyApplication"/>
+    <item screen="erasmusaga_ToDoListScreeenCc" caption="mainMsg://menu_config.erasmusaga_ToDoListScreeenCc"/>
+    <item screen="erasmusaga_ToDoListScreenAdmin" caption="mainMsg://menu_config.erasmusaga_ToDoListScreenAdmin"/>
+    <item screen="erasmusaga_UniversityListScreen" caption="mainMsg://menu_config.erasmusaga_UniversityListScreen"/>
+    <item screen="erasmusaga_StudentProfileScreen" caption="mainMsg://menu_config.erasmusaga_StudentProfileScreen"/>
+    <item screen="erasmusaga_CoordinatorProfile" caption="mainMsg://menu_config.erasmusaga_CoordinatorProfile"/>
+    <item screen="erasmusaga_AdminProfile" caption="mainMsg://menu_config.erasmusaga_AdminProfile"/>
     <item screen="erasmusaga_ApplicationListScreen" caption="mainMsg://menu_config.erasmusaga_ApplicationListScreen"
           insertBefore="administration"/>
-    <menu id="application-erasmusaga" caption="mainMsg://menu_config.application-erasmusaga">
-        <item screen="erasmusaga_ToDoListScreeenCc" caption="mainMsg://menu_config.erasmusaga_ToDoListScreeenCc"/>
-        <item screen="erasmusaga_ToDoListScreenAdmin" caption="mainMsg://menu_config.erasmusaga_ToDoListScreenAdmin"/>
-        <item screen="erasmusaga_StudentProfileScreen" caption="mainMsg://menu_config.erasmusaga_StudentProfileScreen"/>
-        <item screen="erasmusaga_CoordinatorProfile" caption="mainMsg://menu_config.erasmusaga_CoordinatorProfile"/>
-        <item screen="erasmusaga_AdminProfile" caption="mainMsg://menu_config.erasmusaga_AdminProfile"/>
-        <item screen="erasmusaga_UniversityListScreen" caption="mainMsg://menu_config.erasmusaga_UniversityListScreen"/>
-        <item screen="erasmusaga_AddCourseScreen" caption="mainMsg://menu_config.erasmusaga_AddCourseScreen"/>
-        <item screen="erasmusaga_MyApplication" caption="mainMsg://menu_config.erasmusaga_MyApplication"/>
-    </menu>
 </menu-config>

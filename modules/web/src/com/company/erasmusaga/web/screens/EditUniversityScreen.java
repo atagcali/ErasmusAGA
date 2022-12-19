@@ -5,6 +5,7 @@ import com.company.erasmusaga.entity.Course;
 import com.company.erasmusaga.entity.University;
 import com.google.common.collect.ImmutableMap;
 import com.haulmont.cuba.core.global.DataManager;
+import com.haulmont.cuba.core.global.Security;
 import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.components.DataGrid;
@@ -28,6 +29,10 @@ public class EditUniversityScreen extends Screen {
     private ScreenBuilders screenBuilders;
     @Inject
     private DataManager dataManager;
+    @Inject
+    private Security security;
+    @Inject
+    private Button addCourseButton;
 
     @Subscribe
     public void onInit(InitEvent event) {
@@ -38,6 +43,9 @@ public class EditUniversityScreen extends Screen {
         universityCoursesL.load();
         if (universityCoursesL.getContainer().getMutableItems().isEmpty()){
             universityCoursesDG.setVisible(false);
+        }
+        if(!security.isSpecificPermitted("list.enableCC")){
+            addCourseButton.setVisible(false);
         }
     }
 

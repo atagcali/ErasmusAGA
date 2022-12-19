@@ -37,31 +37,31 @@
                     </vbox>
                 </vbox>
                 <vbox id="rightSide">
-                    <checkBox id="seenByCC" dataContainer="applicationDc" property="seenByCC" caption="SeenByCC" align="TOP_RIGHT"/>
-                    <checkBox id="seenByAdmin" dataContainer="applicationDc" property="seenByAdmin" caption="SeeByAdmin" align="TOP_RIGHT"/>
+                    <checkBox id="seenByCC" dataContainer="applicationDc" property="seenByCC" caption="Seen By Course Coordinator" align="TOP_RIGHT"/>
+                    <checkBox id="seenByAdmin" dataContainer="applicationDc" property="seenByAdmin" caption="Seen By Erasmus Administrator" align="TOP_RIGHT"/>
                     <hbox>
-                        <label id="student_name" value = "Name" stylename="import-label-style" css="margin-right:70px" />
-                        <textField  id="input_id" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.name" />
+                        <label id="student_name" value = "Name" stylename="alp"  />
+                        <textField  id="input_id" dataContainer="applicationDc" stylename="gokberk2" editable="false" property="student.name" />
                     </hbox>
                     <hbox>
-                        <label id="student_id" value="ID" stylename="import-label-style" css="margin-right:100px"/>
-                        <textField id="input_name" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.bilkentID" />
-                    </hbox>
-                    <!--<hbox>
-                        <label id="student_department" value="Department" stylename="import-label-style" css="margin-right:55px"/>
-                        <textField id="input_department" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.department" />
-                    </hbox> -->
-                    <hbox>
-                        <label id="total_point" value = "Total Point" stylename="import-label-style" css="margin-right: 35px"/>
-                        <textField id="input_total_point" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="student.totalGrade"  />
+                        <label id="student_id" value="ID" stylename="alp" />
+                        <textField id="input_name" dataContainer="applicationDc" stylename="gokberk2" editable="false" property="student.bilkentID" />
                     </hbox>
                     <hbox>
-                        <label id="duration" value="Duration" stylename="import-label-style" css="margin-right: 50px"/>
-                        <textField id="input_duration" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="duration" />
+                        <label id="total_point" value = "Total Point" stylename="alp" />
+                        <textField id="input_total_point" dataContainer="applicationDc" stylename="gokberk2" editable="false" property="student.totalGrade"  />
                     </hbox>
                     <hbox>
-                        <label id="status" value="Status" stylename="import-label-style" css="margin-right: 70px" />
-                        <textField id="input_status" dataContainer="applicationDc" stylename="inputTf-style" editable="false" property="lastStatus.type.name"/>
+                        <label id="duration" value="Duration" stylename="alp" />
+                        <textField id="input_duration" dataContainer="applicationDc" stylename="gokberk2" editable="false" property="duration" />
+                    </hbox>
+                    <hbox>
+                        <label id="status" value="Status" stylename="alp" />
+                        <textField id="input_status" dataContainer="applicationDc" stylename="gokberk2" editable="false" property="lastStatus.type.name"/>
+                    </hbox>
+                    <hbox>
+                        <label id="acceptedUni" value="Accepted University" stylename="alp"/>
+                        <textField id="input_acceptedUni" dataContainer="applicationDc" property="student.acceptedUniversity" stylename="gokberk2" editable="false"/>
                     </hbox>
                     <dataGrid id="unisDG" dataContainer="unisDc" css="margin-left:50px">
                         <columns>
