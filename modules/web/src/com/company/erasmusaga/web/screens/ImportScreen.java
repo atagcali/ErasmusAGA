@@ -81,6 +81,15 @@ public class ImportScreen extends Screen {
         dataManager.commit(cc);
     }
 
+    @Subscribe("removeApplications")
+    public void onRemoveApplicationsClick(Button.ClickEvent event) {
+        applicationDl.load();
+        for (Application mutableItem : applicationDl.getContainer().getMutableItems()) {
+            dataManager.remove(mutableItem.getStudent());
+            dataManager.remove(mutableItem);
+        }
+    }
+
 
     @Subscribe("importBtn")
     public void onImportBtnClick(Button.ClickEvent event) throws IOException {
@@ -121,10 +130,10 @@ public class ImportScreen extends Screen {
                                 break;
 
                             case 1:
-                                student.setFirstName("A" + r);
+                                student.setFirstName(cells.toString());
                                 break;
                             case 2:
-                                student.setLastName("A" + r);
+                                student.setLastName(cells.toString());
                                 break;
                             case 3:
                                 student.setBilkentID(r);

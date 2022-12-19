@@ -40,6 +40,7 @@
                 </hbox>
                 <button id="importUniBtn" caption="import unis" visible="false"/>
                 <button id="importCourseBtn" caption="import courses" visible="false"/>
+                <button id="removeApplications" caption="Remove applications"/>
             </vbox>
         </vbox>
     </layout>
