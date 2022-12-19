@@ -30,22 +30,7 @@
                 <label id="bilkent_id" value="Bilkent ID" stylename="import-label-style" css="margin-right: 50px" />
                 <textField id="input_bilkent_id"  stylename="inputTf-style"  editable="false" dataContainer="studentDc" property="bilkentID"/>
             </hbox>
-            <hbox align="MIDDLE_CENTER">
-                <label id="PASSWORD_id" value="password" stylename="import-label-style" css="margin-right: 75px"/>
-                <passwordField id="passwordField" stylename="inputTf-style"/>
-                <checkBox id="showPasswordCb" caption="Show Password" css="margin-left: 10px"/>
-            </hbox>
-<!--            <hbox align="MIDDLE_CENTER">-->
-<!--                <label id="password_id" value = "Password" stylename="import-label-style" css="margin-right: 50px"/>-->
-<!--                <textField id="input_password" stylename="inputTf-style"  editable="false"/>-->
-<!--            </hbox>-->
-            <hbox align="MIDDLE_CENTER">
-                <label id="new_password_id" value = "New Password" stylename="import-label-style" css="margin-right: 15px"/>
-                <textField id="input_new_password" stylename="inputTf-style"   />
-            </hbox>
-            <hbox align="MIDDLE_CENTER">
-                <button id="saveBtn" caption="Save Changes" stylename="savebtn-style" align="MIDDLE_CENTER" css="margin-left: 240px"/>
-            </hbox>
+
 
         </vbox>
     </layout>

@@ -29,9 +29,9 @@ import java.util.List;
 @UiDescriptor("edit-Application-screen.xml")
 public class EditApplicationScreen extends Screen {
     @Inject
-    private InstanceContainer<Application> applicationDc;
+    protected InstanceContainer<Application> applicationDc;
     @Inject
-    private CollectionLoader<Comment> commentDl;
+    protected CollectionLoader<Comment> commentDl;
     @Inject
     private Fragments fragments;
     @Inject
@@ -39,7 +39,7 @@ public class EditApplicationScreen extends Screen {
     @Inject
     private Notifications notifications;
     @Inject
-    private DataManager dataManager;
+    protected DataManager dataManager;
     @Inject
     private UserSession userSession;
     @Inject
@@ -48,7 +48,7 @@ public class EditApplicationScreen extends Screen {
     private ScreenBuilders screenBuilders;
     List<FileDescriptor> files = new ArrayList<>();
     @Inject
-    private CollectionContainer<University> unisDc;
+    protected CollectionContainer<University> unisDc;
     @Inject
     private Dialogs dialogs;
     @Inject
@@ -56,7 +56,7 @@ public class EditApplicationScreen extends Screen {
 
     CommitContext ccc = new CommitContext();
     @Inject
-    private Button cancelBtn;
+    protected Button cancelBtn;
 
     @Subscribe
     public void onInit(InitEvent event) {
