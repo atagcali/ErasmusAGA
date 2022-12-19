@@ -117,6 +117,11 @@ public class ImportScreen extends Screen {
                 if (r >= startIndexTf.getValue()-1 && r <= endIndexTf.getValue()-1) {
                     Student student = dataManager.create(Student.class);
                     Application application = dataManager.create(Application.class);
+                    Status status = dataManager.create(Status.class);
+                    status.setType(dataManager.load(StatusType.class).query("e.name=:name").parameter("name","In the evaluation").one());
+                    status.setApplication(application);
+                    application.setLastStatus(status);
+                    ccc.addInstanceToCommit(status);
                     ccc.addInstanceToCommit(student);
                     ccc.addInstanceToCommit(application);
                     List<University> universityList = new ArrayList<>();

@@ -1,8 +1,6 @@
 package com.company.erasmusaga.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.OnDelete;
-import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,7 +19,6 @@ public class Application extends StandardEntity {
     @Column(name = "SEEN_BY_ADMIN")
     private Boolean seenByAdmin;
 
-    @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DURATION_ID")
     private Duration duration;

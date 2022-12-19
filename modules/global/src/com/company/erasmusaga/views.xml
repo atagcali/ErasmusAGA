@@ -31,6 +31,7 @@
         <property name="createTs"/>
         <property name="requirements" view="_local"/>
         <property name="policies" view="_local"/>
+        <property name="acceptedStudents" view="student-view"/>
     </view>
     <view name="department-view" class="com.company.erasmusaga.entity.Department" extends="_local">
         <property name="courses"/>
