@@ -87,6 +87,7 @@ public class EditApplicationScreen extends Screen {
             applicationDc.getItem().setSeenByAdmin(false);
             comment.setDocuments(files);
             commitContext.addInstanceToCommit(comment);
+            commitContext.addInstanceToCommit(applicationDc.getItemOrNull());
             dataManager.commit(commitContext);
             applicationDc.setItem(dataManager.reload(applicationDc.getItem(),"application-view"));
             loadComments();
@@ -109,6 +110,7 @@ public class EditApplicationScreen extends Screen {
     public void loadComments(){
         commentDl.load();
         commentsVbox.removeAll();
+        commentDl.load();
         for (Comment mutableItem : commentDl.getContainer().getMutableItems()) {
             CommentFragment commentFragment = fragments.create(this,CommentFragment.class);
             commentFragment.setComment(mutableItem);
@@ -138,5 +140,6 @@ public class EditApplicationScreen extends Screen {
     @Subscribe
     public void onBeforeClose(BeforeCloseEvent event) {
         dataManager.commit(ccc);
+        dataManager.commit(applicationDc.getItem());
     }
 }

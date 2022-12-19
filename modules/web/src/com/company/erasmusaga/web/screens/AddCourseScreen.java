@@ -24,7 +24,7 @@ import java.util.List;
 @UiController("erasmusaga_AddCourseScreen")
 @UiDescriptor("add-course-screen.xml")
 public class AddCourseScreen extends Screen {
-    University university;
+    private University university;
     @Inject
     private DataManager dataManager;
     @Inject

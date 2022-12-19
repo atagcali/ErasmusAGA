@@ -23,7 +23,6 @@ public class AppLoginScreen extends LoginScreen {
     @Subscribe
     public void onAppLoginScreenInit(InitEvent event) {
         loadStyles();
-
         initBottomPanel();
     }
 
